@@ -9,9 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="js/efeitos/efeitos.css">
 </head>
 
 <body>
@@ -47,7 +49,7 @@
         <nav class="nav" aria-label="Navegação principal">
             <a href="#inicio" class="nav__link nav__link--activo">Início</a>
             <a href="#sobre" class="nav__link">Sobre</a>
-            <a href="#projectos" class="nav__link">Projectos</a>
+            <a href="#projectos" class="nav__link">Experiência</a>
             <a href="#contactos" class="nav__link">Contactos</a>
             <a href="#" class="nav__link nav__link--xtremedevs">XtremeDevs</a>
         </nav>
@@ -61,7 +63,7 @@
                 data-props='{"colors":["#5227FF","#FF9FFC","#B497CF"],"backgroundColor":"#05020d","intensity":2,"mouseForce":20,"cursorSize":100,"resolution":0.5,"maxDevicePixelRatio":1.5}'
                 aria-hidden="true"></div>
 
-            <div class="hero__conteudo">
+            <div class="hero__conteudo" data-aos="fade-up">
                 <h1 class="hero__titulo" data-efeito="glitchtext"
                     data-props='{"text":"Lideramos a Transformação Digital em Moçambique.","trigger":"always","offset":2}'>Lideramos a Transformação Digital em Moçambique.</h1>
                 <div class="hero__acoes">
@@ -75,7 +77,7 @@
                 data-props='{"count":260,"color":"#0b2942","accentColor":"#13b8a6","lightMode":true,"hideCursor":false}'
                 aria-hidden="true"></div>
 
-            <div class="sobre__conteudo">
+            <div class="sobre__conteudo" data-aos="fade-right">
                 <h2 class="sobre__titulo titulo-seccao">&lt;Sobre nós/&gt;</h2>
 
                 <p class="sobre__texto">
@@ -98,12 +100,12 @@
                 aria-hidden="true"></div>
 
             <div class="servicos__interior">
-                <h2 class="servicos__titulo titulo-seccao">Serviços</h2>
-                <p class="servicos__introducao">
+                <h2 class="servicos__titulo titulo-seccao" data-aos="fade-right">Serviços</h2>
+                <p class="servicos__introducao" data-aos="fade-right" data-aos-delay="100">
                     Da capacitação ao suporte técnico, oferecemos soluções para acompanhar cada etapa da transformação digital.
                 </p>
 
-                <div class="servicos__palco" data-servicos role="group" aria-label="Os nossos serviços">
+                <div class="servicos__palco" data-servicos data-aos="fade-up" role="group" aria-label="Os nossos serviços">
 
                     <article class="servico" data-profundidade="0" tabindex="0">
                         <div class="servico__barra" aria-hidden="true">
@@ -211,11 +213,11 @@
                 </div>
             </div>
         </section>
-        <section id="experiencia" class="experiencia">
-            <h2 class="titulo-seccao">Experiência</h2>
+        <section id="projectos" class="experiencia">
+            <h2 class="titulo-seccao" data-aos="fade-down">Experiência</h2>
 
             <ul class="experiencia__cartoes">
-                <li class="exp">
+                <li class="exp" data-aos="fade-up" data-aos-duration="650">
                     <i class="fa-solid fa-mobile-screen exp__icone" aria-hidden="true"></i>
                     <h3 class="exp__titulo">Aplicações Mobile</h3>
                     <p class="exp__texto">desenvolvemos aplicações para smartphones</p>
@@ -224,7 +226,7 @@
                         <i class="fa-brands fa-apple" aria-hidden="true"></i>
                     </p>
                 </li>
-                <li class="exp">
+                <li class="exp" data-aos="fade-up" data-aos-duration="650" data-aos-delay="120">
                     <i class="fa-solid fa-desktop exp__icone" aria-hidden="true"></i>
                     <h3 class="exp__titulo">Aplicações Desktop</h3>
                     <p class="exp__texto">desenvolvemos aplicações para computadores</p>
@@ -234,12 +236,12 @@
                         <i class="fa-brands fa-linux" aria-hidden="true"></i>
                     </p>
                 </li>
-                <li class="exp">
+                <li class="exp" data-aos="fade-up" data-aos-duration="650" data-aos-delay="240">
                     <i class="fa-solid fa-globe exp__icone" aria-hidden="true"></i>
                     <h3 class="exp__titulo">Aplicações web</h3>
                     <p class="exp__texto">desenvolvemos aplicações para a web</p>
                 </li>
-                <li class="exp">
+                <li class="exp" data-aos="fade-up" data-aos-duration="650" data-aos-delay="360">
                     <i class="fa-solid fa-screwdriver-wrench exp__icone" aria-hidden="true"></i>
                     <h3 class="exp__titulo">Manutenção e consultoria</h3>
                     <p class="exp__texto">mantemos os seus sistemas actualizados e seguros</p>
@@ -247,7 +249,7 @@
             </ul>
 
             <!-- Faixa de tecnologias: o JavaScript duplica a lista para o ciclo contínuo -->
-            <div class="faixa" data-faixa role="group" aria-label="Tecnologias que utilizamos">
+            <div class="faixa" data-faixa data-aos="fade-up" role="group" aria-label="Tecnologias que utilizamos">
                 <ul class="faixa__lista">
                     <li><i class="devicon-nodejs-plain" role="img" aria-label="Node.js"></i></li>
                     <li><i class="devicon-nextjs-plain" role="img" aria-label="Next.js"></i></li>
@@ -262,13 +264,13 @@
                 </ul>
             </div>
 
-            <h2 class="titulo-seccao titulo-seccao--depoimentos">Depoimentos</h2>
-            <p class="experiencia__subtitulo">Veja o que as pessoas que já trabalharam connosco acham dos nossos
+            <h2 class="titulo-seccao titulo-seccao--depoimentos" data-aos="fade-down">Depoimentos</h2>
+            <p class="experiencia__subtitulo" data-aos="fade-up">Veja o que as pessoas que já trabalharam connosco acham dos nossos
                 serviços</p>
 
-            <div class="depoimentos" data-depoimentos role="region" aria-label="Depoimentos de clientes">
+            <div class="depoimentos" data-depoimentos data-aos="fade-up" role="region" aria-label="Depoimentos de clientes">
                 <div class="depoimentos__grupo">
-                    <article class="depoimento">
+                    <article class="depoimento" data-aos="fade-left" data-aos-duration="800">
                         <i class="fa-regular fa-circle-user depoimento__avatar" aria-hidden="true"></i>
                         <h3 class="depoimento__nome">Ana Rita</h3>
                         <p class="depoimento__conta">@cliente</p>
@@ -287,9 +289,9 @@
         </section>
 
         <section id="contactos" class="contactos-seccao">
-            <h2 class="contactos-seccao__titulo titulo-seccao">Onde nos contactar</h2>
+            <h2 class="contactos-seccao__titulo titulo-seccao" data-aos="fade-down">Onde nos contactar</h2>
 
-            <iframe class="contactos-seccao__mapa" title="Mapa da localização da Xtreme Innovation, Maputo"
+            <iframe class="contactos-seccao__mapa" data-aos="zoom-in" data-aos-delay="100" title="Mapa da localização da Xtreme Innovation, Maputo"
                 src="https://www.google.com/maps?q=Sommerschield,+Maputo,+Mozambique&output=embed" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
@@ -299,15 +301,15 @@
             data-props='{"horizonColor":"#5227FF","waveColor":"#FF9FFC","crestColor":"#FFFFFF","backgroundColor":"transparent","speed":0.35,"opacity":0.78,"quality":"medium","dpr":1,"mouseInteraction":true,"swellOnClick":true}'
             aria-hidden="true"></div>
 
-        <nav class="nav rodape__nav" aria-label="Navegação do rodapé">
+        <nav class="nav rodape__nav" data-aos="fade-down" aria-label="Navegação do rodapé">
             <a href="#inicio" class="nav__link nav__link--activo">Início</a>
             <a href="#sobre" class="nav__link">Sobre</a>
-            <a href="#projectos" class="nav__link">Projectos</a>
+            <a href="#projectos" class="nav__link">Experiência</a>
             <a href="#contactos" class="nav__link">Contactos</a>
             <a href="#" class="nav__link">XtremeDevs</a>
         </nav>
 
-        <ul class="social rodape__social">
+        <ul class="social rodape__social" data-aos="fade-up">
             <li><a href="#" class="social__link" aria-label="Facebook"><i class="fa-brands fa-facebook"
                         aria-hidden="true"></i></a></li>
             <li><a href="#" class="social__link" aria-label="Instagram"><i class="fa-brands fa-instagram"
@@ -318,22 +320,21 @@
                         aria-hidden="true"></i></a></li>
         </ul>
 
-        <p class="rodape__lema">Lideramos a Transformação Digital em Moçambique.</p>
-        <a href="#contactos" class="btn btn--claro">Pedir orçamento</a>
+        <p class="rodape__lema" data-aos="fade-up">Lideramos a Transformação Digital em Moçambique.</p>
+        <a href="#contactos" class="btn btn--claro" data-aos="fade-up">Pedir orçamento</a>
 
-        <ul class="contactos rodape__contactos">
+        <ul class="contactos rodape__contactos" data-aos="fade-up">
             <li>telefone: <a href="tel:+258846832744">+258 84 683 2744</a></li>
             <li>email: <a href="mailto:xtremeinnovation@xtreme.com">xtremeinnovation@xtreme.com</a></li>
             <li>localização: Moçambique, Cidade de Maputo, Sommerschield</li>
         </ul>
 
-        <p class="rodape__copy">copyright by XTREMEINNOVATION</p>
+        <p class="rodape__copy" data-aos="fade-up">copyright by XTREMEINNOVATION</p>
     </footer>
 
     <script src="js/servicos.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
     <script src="js/principal.js" defer></script>
-    <script src="js/servicos.js" defer></script>
-    <link rel="stylesheet" href="js/efeitos/efeitos.css">
     <script src="js/efeitos/efeitos.js" defer></script>
 </body>
 

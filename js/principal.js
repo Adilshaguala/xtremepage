@@ -22,3 +22,21 @@
     depoimentos.classList.add("depoimentos--animado");
     depoimentos.appendChild(copia);
 })();
+
+if (window.AOS) {
+    window.AOS.init({
+        duration: 300,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 80,
+        disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    });
+
+    // O conteúdo de um painel alto rola dentro do próprio painel.
+    // Encaminha essa rolagem ao AOS para disparar as entradas dos cartões.
+    document.querySelectorAll("main > section, .rodape").forEach((painel) => {
+        painel.addEventListener("scroll", () => {
+            window.dispatchEvent(new Event("scroll"));
+        }, { passive: true });
+    });
+}

@@ -18,7 +18,7 @@
     --tipo-cartao: 1rem;
     --tipo-corpo: 0.875rem;
     --tipo-secundario: 0.75rem;
-    --tipo-micro: 0.5rem;
+    --tipo-micro: 0.8rem;
     --espaco-titulo-conteudo: 1.5rem;
     --espaco-subtitulo-conteudo: 1rem;
     --peso-normal: 400;
@@ -78,6 +78,7 @@ h3 {
 .servico .servico__titulo,
 .exp__titulo,
 .depoimento__nome {
+    font-family: var(--fonte);
     font-size: var(--tipo-cartao);
     font-weight: var(--peso-semi);
     line-height: var(--linha-titulo);
@@ -202,7 +203,8 @@ h3 {
 .hero {
     position: relative;
     overflow: hidden;
-    min-height: 663px;
+    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -266,6 +268,8 @@ h3 {
     isolation: isolate;
     overflow: hidden;
     min-height: 508px;
+    display: flex;
+    align-items: center;
     padding: 141px 24px 120px;
     color: #000;
     /* Véu branco (42%) sobre a imagem equivale a imagem com 58% de opacidade sobre fundo branco */
@@ -302,7 +306,9 @@ h3 {
 .servicos {
     position: relative;
     overflow: hidden;
-    padding: 62px 24px 0;
+    display: flex;
+    align-items: center;
+    padding: 62px 24px 40px;
     background:
         url("../assets/servicos-brilho.svg") 50% 305px / 1861px 1194px no-repeat,
         #000;
@@ -319,6 +325,7 @@ h3 {
     position: relative;
     z-index: 1;
     max-width: 1130px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -399,7 +406,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2px 10px;
+    padding: 5px 10px;
     border-bottom: 1px solid #242424;
 }
 
@@ -416,8 +423,8 @@ h3 {
 }
 
 .servico__pontos span {
-    width: 7px;
-    height: 7px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
 }
 
@@ -479,11 +486,15 @@ h3 {
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 /* ---------- Experiência e Depoimentos ---------- */
 .experiencia {
-    padding: 77px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 56px 24px;
     color: #000;
     background: #fff;
     text-align: center;
@@ -499,6 +510,8 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(240px, 268px));
     justify-content: center;
     gap: 9px;
+    width: 100%;
+    max-width: 1100px;
     margin: 0 auto;
     text-align: left;
 }
@@ -626,6 +639,12 @@ html {
     padding: 12px 10px 16px;
     border-radius: 20px;
     background: #eeeded;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.depoimento.aos-animate:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
 }
 
 .depoimento__avatar {
@@ -668,6 +687,10 @@ html {
 
 /* ---------- Onde nos contactar ---------- */
 .contactos-seccao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 0;
     background: #fff;
     color: #000;
     text-align: center;
@@ -697,7 +720,8 @@ html {
 .contactos-seccao__mapa {
     display: block;
     width: 100%;
-    height: 420px;
+    height: min(58vh, 520px);
+    min-height: 320px;
     border: 0;
 }
 
@@ -709,7 +733,8 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 576px;
+    min-height: 100vh;
+    min-height: 100svh;
     padding: 13px 24px 46px;
     color: #fff;
     text-align: center;
@@ -754,4 +779,36 @@ html {
     font-weight: var(--peso-semi);
     line-height: var(--linha-corpo);
     color: #626262;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+        scroll-snap-type: y proximity;
+    }
+
+    .depoimento {
+        transition: none;
+    }
+
+    .depoimento.aos-animate:hover {
+        transform: none;
+    }
+}
+
+/* Cada painel ocupa o ecrã; conteúdo mais alto pode ser percorrido dentro dele. */
+main > section[class],
+.rodape {
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+    overflow-y: auto;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* Mantém o conteúdo visível caso o ficheiro externo do AOS não carregue. */
+[data-aos]:not(.aos-init) {
+    opacity: 1;
+    transform: none;
 }
